@@ -1,10 +1,44 @@
+{% load static %}
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Inicio</title>
+    <link rel="stylesheet" href="{% static 'css/base.css' %}" />
 
-</body>
+  </head>
+  <body>
+<div class="nav">
+  <input type="checkbox" id="nav-check">
+  <div class="nav-header">
+    <img style="width: 6%" src="{% static 'image/controle.png' %}"/>
+    <div class="nav-title">
+      PlayStoreBR
+    </div>
+  </div>
+  <div class="nav-btn">
+    <label for="nav-check">
+      <span></span>
+      <span></span>
+      <span></span>
+    </label>
+  </div>
+
+  <div class="nav-links">
+    <a href="/" >Início</a>
+    <a href="/" >Área do Funcionário</a>
+    <a href="/" >Área do Cliente</a>
+    <!--
+    <a href="/" >Sair</a>
+     -->
+
+  </div>
+</div>
+{% block content %}
+
+
+{% endblock %}
+  </body>
 </html>
