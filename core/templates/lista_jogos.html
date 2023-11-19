@@ -4,7 +4,12 @@
   <h2>Lista de Jogos</h2>
   <ul>
     {% for jogo in jogos %}
-      <li><a href="{% url 'detalhe_jogo' jogo.id %}">{{ jogo.nome }}</a></li>
+      <li>
+        <a href="{% url 'detalhe_jogo' jogo.id %}">
+          <img src="{{ jogos.imagem.url }}" alt="{{ jogo.nome }}" width="100" height="100">
+          {{ jogo.nome }}
+        </a>
+      </li>
     {% endfor %}
   </ul>
   <a href="{% url 'adicionar_jogo' %}">Adicionar Jogo</a>

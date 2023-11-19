@@ -1,8 +1,10 @@
+
+<!-- templates/jogos/adicionar_jogo.html -->
 {% extends 'base.html' %}
 
 {% block content %}
   <h2>Adicionar Jogo</h2>
-  <form method="post" action="{% url 'adicionar_jogo' %}">
+  <form method="post" action="{% url 'adicionar_jogo' %}" enctype="multipart/form-data">
     {% csrf_token %}
     {{ form.as_p }}
     <button type="submit">Salvar</button>
