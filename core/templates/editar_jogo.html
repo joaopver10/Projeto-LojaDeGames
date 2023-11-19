@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h2>Editar Jogo - {{ jogo.nome }}</h2>
+  <form method="post" action="{% url 'editar_jogo' jogo.id %}">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Salvar</button>
+  </form>
+  <a href="{% url 'lista_jogos' %}">Voltar para a lista de jogos</a>
+{% endblock %}

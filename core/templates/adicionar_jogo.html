@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h2>Adicionar Jogo</h2>
+  <form method="post" action="{% url 'adicionar_jogo' %}">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Salvar</button>
+  </form>
+  <a href="{% url 'lista_jogos' %}">Voltar para a lista de jogos</a>
+{% endblock %}

@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+  <h2>Resultados da Busca</h2>
+
+  <form method="get" action="{% url 'buscar_jogos' %}">
+    <input type="text" name="q" value="{{ query }}">
+    <button type="submit">Buscar</button>
+  </form>
+
+  {% if jogos %}
+    <ul>
+      {% for jogo in jogos %}
+        <li><a href="{% url 'detalhar_jogo' jogo.id %}">{{ jogo.nome }}</a></li>
+      {% endfor %}
+    </ul>
+  {% else %}
+    <p>Nenhum resultado encontrado.</p>
+  {% endif %}
+{% endblock %}

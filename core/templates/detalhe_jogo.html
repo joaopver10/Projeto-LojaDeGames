@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h2>{{ jogo.nome }}</h2>
+  <p>Tema: {{ jogo.tema }}</p>
+  <p>Descrição: {{ jogo.descricao }}</p>
+  <p>Sistema de Avaliação: {{ jogo.sistema_avaliacao }}</p>
+  <a href="{% url 'editar_jogo' jogo.id %}">Editar</a>
+  <a href="{% url 'excluir_jogo' jogo.id %}">Excluir</a>
+{% endblock %}
