@@ -6,7 +6,7 @@
     {% for jogo in jogos %}
       <li>
         <a href="{% url 'detalhe_jogo' jogo.id %}">
-          <img src="{{ jogos.imagem.url }}" alt="{{ jogo.nome }}" width="100" height="100">
+          <img src="{{ jogo.imagem.url }}"  width="100" height="100">
           {{ jogo.nome }}
         </a>
       </li>

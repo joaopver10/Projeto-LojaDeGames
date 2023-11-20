@@ -16,9 +16,11 @@ def detalhe_jogo(request, jogo_id):
 
 def adicionar_jogo(request):
     if request.method == 'POST':
-        form = JogoForm(request.POST)
+        form = JogoForm(request.POST, request.FILES)
         if form.is_valid():
-            form.save()
+            jogo = form.save(commit=False)
+            jogo.imagem = request.FILES.get('imagem')
+            jogo.save()
             return redirect('lista_jogos')
     else:
         form = JogoForm()
@@ -27,7 +29,7 @@ def adicionar_jogo(request):
 def editar_jogo(request, jogo_id):
     jogo = get_object_or_404(Jogo, pk=jogo_id)
     if request.method == 'POST':
-        form = JogoForm(request.POST, instance=jogo)
+        form = JogoForm(request.POST, request.FILES, instance=jogo)
         if form.is_valid():
             form.save()
             return redirect('lista_jogos')
