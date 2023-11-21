@@ -1,9 +1,90 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load bootstrap4 %}
+
+{% block title %}
+<title>Início</title>
+{% endblock %}
 
 
+{% block head %}
+{% bootstrap_css %}
+<link rel="stylesheet" href="{% static 'css/index.css' %}" />
+{% endblock %}
 
 {% block content %}
+  <div id="textoTitulo">
+    <h2>Catálogo</h2>
+  </div>
+  <!-- Formulário de busca e filtragem -->
+  <div class="container-fluid">
+    <div class="row justify-content-md-center">
+      <div class="col-md-6 bg-side">
+        <div class="body-form">
+          <form method="get"  action="{% url 'index' %}">
+            <div class="row">
+              <div class="col-md">
+                <input class="form-control"  type="text" name="search" placeholder="Buscar jogo" value="{{ search_query }}">
+              </div>
+            <br>
+              <div class="col-6 col-md-3">
+                <select class="form-control" name="tema">
+                  <option value="" {% if not tema %}selected{% endif %}>Tema</option>
+                  <option value="ação" {% if tema == 'ação' %}selected{% endif %}>Ação</option>
+                  <option value="terror" {% if tema == 'terror' %}selected{% endif %}>Terror</option>
+                  <option value="rpg" {% if tema == 'rpg' %}selected{% endif %}>RPG</option>
+                  <option value="sobrevivência" {% if tema == 'sobrevivência' %}selected{% endif %}>Sobrevivência</option>
+                  <option value="enigma" {% if tema == 'enigma' %}selected{% endif %}>Enigma</option>
+                  <option value="corrida" {% if tema == 'corrida' %}selected{% endif %}>Corrida</option>
+                </select>
+              </div>
+            </div>
+              <br>
+              <div class="row justify-content-center">
+                    <button type="submit" class="btn btn-primary">Buscar</button>
+              </div>
+            <br>
+          </form>
+        </div>
+    </div>
+  </div>
+  </div>
 
+
+
+
+  <!-- Lista de jogos encontrados -->
+  {% if jogos %}
+    <div id="textoResultado">
+      <p>Resultados da busca</p>
+    </div>
+
+
+<div class="JogosListaNomes">
+  {% for jogo in jogos %}
+
+    <div class="JogosNomes">
+      <ul>
+        <li>
+          <img src="{{ jogo.imagem.url }}" alt="{{ jogo.nome }}" width="150" height="180">
+          <a href="{% url 'visualizar_jogo' jogo.id %}">
+            {{ jogo.nome }}
+          </a>
+        </li>
+
+        </ul>
+    </div>
+  {% endfor %}
+</div>
+
+
+
+
+
+  {% else %}
+    <p>Nenhum jogo encontrado.</p>
+  {% endif %}
 
 {% endblock %}
+
+{% bootstrap_javascript jquery='full' %}

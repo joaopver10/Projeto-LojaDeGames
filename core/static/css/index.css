@@ -1,0 +1,58 @@
+#textoTitulo{
+    text-align: center;
+    font-size: 1.9em;
+    padding: 30px;
+}
+
+#textoResultado{
+    border-top: solid black 1px ;
+    text-align: center;
+    font-size: 1.9em;
+    padding: 10px;
+}
+
+ul{
+    list-style: none;
+}
+ul li{
+
+}
+
+ul li a{
+  text-decoration:none;
+  color: black;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 900;
+}
+
+ul li a:hover {
+   cursor: pointer;
+  color: #D64045;
+}
+ul li a:focus {
+  outline: none;
+}
+
+.JogosListaNomes{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.JogosNomes{
+    display: flex;
+    text-align: center;
+    padding: 15px;
+}
+
+
+.JogosNomes a{
+    display: flex;
+    justify-content: center;
+}
+
+

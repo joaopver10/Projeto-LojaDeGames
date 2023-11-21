@@ -4,7 +4,17 @@ from .forms import JogoForm
 
 
 def index(request):
-    return render(request, 'index.html')
+    search_query = request.GET.get('search', '')
+    tema = request.GET.get('tema', '')
+
+    if search_query:
+        jogos = Jogo.objects.filter(nome__icontains=search_query)
+    elif tema:
+        jogos = Jogo.objects.filter(tema=tema)
+    else:
+        jogos = Jogo.objects.all()
+
+    return render(request, 'index.html', {'jogos': jogos, 'search_query': search_query, 'tema': tema})
 
 def lista_jogos(request):
     jogos = Jogo.objects.all()
@@ -41,3 +51,7 @@ def excluir_jogo(request, jogo_id):
     jogo = get_object_or_404(Jogo, pk=jogo_id)
     jogo.delete()
     return redirect('lista_jogos')
+
+def visualizar_jogo(request, jogo_id):
+    jogo = get_object_or_404(Jogo, pk=jogo_id)
+    return render(request, 'visualizar_jogo.html', {'jogo': jogo})

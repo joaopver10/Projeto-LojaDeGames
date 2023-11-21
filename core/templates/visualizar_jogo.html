@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+  <h2>{{ jogo.nome }}</h2>
+  <p>Tema: {{ jogo.tema }}</p>
+  <p>Descrição: {{ jogo.descricao }}</p>
+  <p>Sistema de Avaliação: {{ jogo.sistema_avaliacao }} estrelas</p>
+  <img src="{{ jogo.imagem.url }}" alt="{{ jogo.nome }}" width="300" height="300">
+
+{% endblock %}
