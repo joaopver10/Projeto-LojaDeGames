@@ -16,6 +16,7 @@
   <div id="textoTitulo">
     <h2>Catálogo</h2>
   </div>
+
   <!-- Formulário de busca e filtragem -->
   <div class="container-fluid">
     <div class="row justify-content-md-center">
@@ -28,8 +29,8 @@
               </div>
             <br>
               <div class="col-6 col-md-3">
-                <select class="form-control" name="tema">
-                  <option value="" {% if not tema %}selected{% endif %}>Tema</option>
+                <select class="form-control" name="tema" >
+                  <option  value="" {% if not tema %}selected{% endif %}>Tema</option>
                   <option value="ação" {% if tema == 'ação' %}selected{% endif %}>Ação</option>
                   <option value="terror" {% if tema == 'terror' %}selected{% endif %}>Terror</option>
                   <option value="rpg" {% if tema == 'rpg' %}selected{% endif %}>RPG</option>
@@ -41,7 +42,7 @@
             </div>
               <br>
               <div class="row justify-content-center">
-                    <button type="submit" class="btn btn-primary">Buscar</button>
+                    <button type="submit" class="btn btn-primary" >Buscar</button>
               </div>
             <br>
           </form>
@@ -62,7 +63,6 @@
 
 <div class="JogosListaNomes">
   {% for jogo in jogos %}
-
     <div class="JogosNomes">
       <ul>
         <li>
@@ -71,7 +71,6 @@
             {{ jogo.nome }}
           </a>
         </li>
-
         </ul>
     </div>
   {% endfor %}
@@ -84,6 +83,13 @@
   {% else %}
     <p>Nenhum jogo encontrado.</p>
   {% endif %}
+
+<script>
+ function limparTema() {
+      document.getElementById('tema').value = '';
+    }
+</script>
+
 
 {% endblock %}
 

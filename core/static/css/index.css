@@ -13,10 +13,9 @@
 
 ul{
     list-style: none;
+    padding: 20px;
 }
-ul li{
 
-}
 
 ul li a{
   text-decoration:none;
@@ -37,22 +36,26 @@ ul li a:focus {
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
-
-    align-items: center;
     justify-content: center;
-    width: 100%;
+    margin: 0 auto;
+    width: 90%;
+
 }
 
 .JogosNomes{
     display: flex;
     text-align: center;
-    padding: 15px;
+    background-color: #999999;
+    margin: 8px;
+    border-radius: 5px;
 }
 
 
 .JogosNomes a{
     display: flex;
     justify-content: center;
+    font-size: 0.8em;
+    font-family: 'Roboto', sans-serif;
 }
 
 
