@@ -1,9 +1,22 @@
 <!-- templates/jogos/revisar_carrinho.html -->
 {% extends 'base.html' %}
+{% load static %}
+{% load bootstrap4 %}
+
+
+{% block title %}
+<title>Revisar Jogo</title>
+{% endblock %}
+
+{% block head %}
+{% bootstrap_css %}
+<link rel="stylesheet" href="{% static 'css/index.css' %}" />
+{% endblock %}
 
 {% block content %}
+ <div id="textoResultado">
   <h2>Revisar Carrinho</h2>
-
+ </div>
   <form method="post" action="{% url 'revisar_carrinho' %}">
     {% csrf_token %}
     <ul class="lista-carrinho">
@@ -17,8 +30,13 @@
         </li>
       {% endfor %}
     </ul>
-    <button type="submit">Finalizar Compra</button>
+    <div class="row justify-content-center">
+      <button type="submit" class="btn btn-primary">Finalizar Compra</button>
+    </div>
   </form>
+  <br>
+  <div class="contLinkVolta">
+    <a href="{% url 'index' %}">Voltar para a busca de jogos</a>
+  </div>
 
-  <a href="{% url 'index' %}">Voltar para a busca de jogos</a>
 {% endblock %}

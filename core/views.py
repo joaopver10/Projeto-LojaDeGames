@@ -2,7 +2,7 @@ from django.shortcuts import render, get_object_or_404, redirect
 from django.template.defaultfilters import upper
 from .models import Jogo
 from .forms import JogoForm
-from django.db.models import Count
+
 import random
 import string
 
