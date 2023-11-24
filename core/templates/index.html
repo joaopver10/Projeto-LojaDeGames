@@ -58,6 +58,9 @@
   {% if jogos %}
     <div id="textoResultado">
       <p>Resultados da busca</p>
+      {% if jogoCarrinho %}
+        {{jogoCarrinho}}
+      {% endif%}
     </div>
 
 
@@ -70,6 +73,11 @@
           <a href="{% url 'visualizar_jogo' jogo.id %}">
             {{ jogo.nome }}
           </a>
+          <form method="post" action="{% url 'adicionar_carrinho' jogo.id %}">
+            {% csrf_token %}
+            <button type="submit" class="btn btn-primary">Adicionar ao Carrinho</button>
+          </form>
+
         </li>
         </ul>
     </div>

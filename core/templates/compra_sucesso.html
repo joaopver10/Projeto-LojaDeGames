@@ -1,0 +1,15 @@
+<!-- templates/jogos/compra_sucesso.html -->
+{% extends 'base.html' %}
+
+{% block content %}
+  <h2>Compra Realizada com Sucesso</h2>
+  <p>Obrigado por sua compra! Abaixo estão os detalhes:</p>
+
+  <ul>
+    {% for compra in compras %}
+      <li>{{ compra.jogo }} - {{ compra.midia }}</li>
+    {% endfor %}
+  </ul>
+
+  <a href="{% url 'index' %}">Voltar para a busca de jogos</a>
+{% endblock %}

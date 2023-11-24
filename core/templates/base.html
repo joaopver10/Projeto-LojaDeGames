@@ -35,10 +35,11 @@
   <div class="nav-links">
     <a href="/" >Início</a>
     <a href="{% url 'funcionario' %}" >Área do Funcionário</a>
-    <a href="/" >Área do Cliente</a>
+    <a href="{% url 'revisar_carrinho' %}" style="color: rgba(35,241,30,0.83);">Carrinho {{ count_jogos_no_carrinho }}</a>
 
 
   </div>
+
 </div>
 {% block content %}
 
