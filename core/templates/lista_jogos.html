@@ -11,7 +11,6 @@
   <div id="textoResultado">
     <p>Painel de Jogos</p>
   </div>
-
   <div class="JogosListaNomes">
     {% for jogo in jogos %}
       <div class="JogosNomes">
@@ -27,6 +26,5 @@
 
     {% endfor %}
   </div>
-    <a href="{% url 'adicionar_jogo' %}">Adicionar Jogo</a>
 
   {% endblock %}

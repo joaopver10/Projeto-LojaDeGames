@@ -55,3 +55,8 @@ def excluir_jogo(request, jogo_id):
 def visualizar_jogo(request, jogo_id):
     jogo = get_object_or_404(Jogo, pk=jogo_id)
     return render(request, 'visualizar_jogo.html', {'jogo': jogo})
+
+
+
+def funcionario(request):
+    return render(request, 'area_func.html')

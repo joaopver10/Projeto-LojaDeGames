@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block title %}
+<title>Área Funcionário</title>
+{% endblock %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'css/index.css' %}" />
+{% endblock %}
+
+
+{% block content %}
+
+    <div class="contLink">
+        <a href="{% url 'adicionar_jogo' %}">Adicionar Jogo</a>
+        <a href="{% url 'lista_jogos' %}" >Lista Jogos</a>
+
+    </div>
+
+{% endblock %}

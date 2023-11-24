@@ -1,11 +1,12 @@
 from django.conf import settings
 from django.conf.urls.static import static
 from django.urls import path
-from core.views import index, lista_jogos, detalhe_jogo, adicionar_jogo, editar_jogo, excluir_jogo, visualizar_jogo
+from core.views import index, lista_jogos, detalhe_jogo, adicionar_jogo, editar_jogo, excluir_jogo, visualizar_jogo, funcionario
 
 
 urlpatterns = [
     path('', index, name='index'),
+    path('funcionario/', funcionario, name='funcionario'),
     path('jogos/', lista_jogos, name='lista_jogos'),
     path('jogos/<int:jogo_id>/', detalhe_jogo, name='detalhe_jogo'),
     path('jogos/adicionar/', adicionar_jogo, name='adicionar_jogo'),
