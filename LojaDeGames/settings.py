@@ -12,7 +12,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 import os
 from pathlib import Path
 import dj_database_url
-
+from django.conf.global_settings import DATABASES
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -92,13 +92,10 @@ DATABASES = {
 }
 """
 
-DATABASES = {
-    'default': dj_database_url.config(
-        default='postgresql://postgres:nTrATydCHXtNjpTMdiLHqoQoZzVUSKjP@roundhouse.proxy.rlwy.net:36503/railway',
-        conn_max_age=600,
-        ssl_require= DEBUG
-    )
-}
+
+DATABASES["default"] = dj_database_url.parse("postgres://loja_de_games_user:M9WgNQGL4toH51sh6sR20FtfBpDpkfB0@dpg-cpm8taqj1k6c73a4b040-a.oregon-postgres.render.com/loja_de_games")
+
+
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
