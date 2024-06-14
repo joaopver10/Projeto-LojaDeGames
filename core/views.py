@@ -2,7 +2,6 @@ from django.shortcuts import render, get_object_or_404, redirect
 from django.template.defaultfilters import upper
 from .models import Jogo
 from .forms import JogoForm
-from PIL import Image
 
 import random
 import string
@@ -65,12 +64,10 @@ def revisar_carrinho(request):
 
 def lista_jogos(request):
     jogos = Jogo.objects.all()
-
     return render(request, 'lista_jogos.html', {'jogos': jogos})
 
 def detalhe_jogo(request, jogo_id):
     jogo = get_object_or_404(Jogo, pk=jogo_id)
-    print(jogo)
     return render(request, 'detalhe_jogo.html', {'jogo': jogo})
 
 def adicionar_jogo(request):

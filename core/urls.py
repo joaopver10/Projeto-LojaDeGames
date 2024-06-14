@@ -1,10 +1,14 @@
 from django.conf import settings
 from django.conf.urls.static import static
-from django.urls import path
+from django.urls import path, re_path
+from django.views.static import serve
+
 from core.views import index, lista_jogos, detalhe_jogo, adicionar_jogo, editar_jogo, excluir_jogo, visualizar_jogo, \
     funcionario, revisar_carrinho, adicionar_carrinho
 
 urlpatterns = [
+    re_path(r'^media/(?P<path>.*)$', serve, {'document_root': settings.MEDIA_ROOT}),
+    re_path(r'^static/(?P<path>.*)$', serve, {'document_root': settings.STATIC_ROOT}),
     path('', index, name='index'),
     path('funcionario/', funcionario, name='funcionario'),
     path('jogos/', lista_jogos, name='lista_jogos'),
