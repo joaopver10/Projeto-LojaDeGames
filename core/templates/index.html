@@ -20,7 +20,7 @@
   <!-- Formulário de busca e filtragem -->
   <div class="container-fluid">
     <div class="row justify-content-md-center">
-      <div class="col-md-6 bg-side">
+      <div class="col-lg-4 bg-side">
         <div class="body-form">
           <form method="get"  action="{% url 'index' %}">
             <div class="row">
@@ -28,7 +28,7 @@
                 <input class="form-control"  type="text" name="search" placeholder="Buscar jogo" value="{{ search_query }}">
               </div>
             <br>
-              <div class="col-6 col-md-3">
+              <div >
                 <select class="form-control" name="tema" >
                   <option  value="" {% if not tema %}selected{% endif %}>Tema</option>
                   <option value="ação" {% if tema == 'ação' %}selected{% endif %}>Ação</option>
