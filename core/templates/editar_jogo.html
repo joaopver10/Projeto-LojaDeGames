@@ -1,11 +1,41 @@
 {% extends 'base.html' %}
+{% load static %}
+{% load bootstrap4 %}
+
+{% load crispy_forms_tags %}
+
+{% block title %}
+<title>Editar Jogo</title>
+{% endblock %}
+
+
+{% block head %}
+{% bootstrap_css %}
+<link rel="stylesheet" href="{% static 'css/index.css' %}" />
+{% endblock %}
 
 {% block content %}
-  <h2>Editar Jogo - {{ jogo.nome }}</h2>
-  <form method="post" action="{% url 'editar_jogo' jogo.id %}">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">Salvar</button>
-  </form>
-  <a href="{% url 'lista_jogos' %}">Voltar para a lista de jogos</a>
+
+ <div id="textoResultado">
+  <p>Editar Jogo - {{ jogo.nome }}</p>
+ </div>
+
+
+    <div class="formulario">
+          <form method="post" action="{% url 'editar_jogo' jogo.id %}">
+            {% csrf_token %}
+            {{ form|crispy }}
+
+              <div class="row justify-content-center">
+                <button type="submit" class="btn btn-primary">Salvar</button>
+              </div>
+          </form>
+    </div>
+  <br>
+  <div class="contLinkVolta">
+    <a href="{% url 'lista_jogos' %}">Voltar para a lista de jogos</a>
+  </div>
+
 {% endblock %}
+
+{% bootstrap_javascript jquery='full' %}

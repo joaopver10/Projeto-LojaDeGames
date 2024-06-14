@@ -15,3 +15,5 @@ class Jogo(models.Model):
     descricao = models.TextField()
     sistema_avaliacao = models.DecimalField(max_digits=3, decimal_places=2)
     imagem = models.ImageField(upload_to='jogos', null=True, blank=True)
+    codigo_midia_digital = models.CharField(max_length=20, blank=True, null=True)
+    no_carrinho = models.BooleanField(default=False)

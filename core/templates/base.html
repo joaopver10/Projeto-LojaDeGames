@@ -5,9 +5,15 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Inicio</title>
-    <link rel="stylesheet" href="{% static 'css/base.css' %}" />
 
+    <link rel="stylesheet" href="{% static 'css/base.css' %}" />
+    {% block title %}
+
+    {% endblock %}
+
+    {% block head %}
+
+    {% endblock %}
   </head>
   <body>
 <div class="nav">
@@ -28,13 +34,12 @@
 
   <div class="nav-links">
     <a href="/" >Início</a>
-    <a href="/" >Área do Funcionário</a>
-    <a href="/" >Área do Cliente</a>
-    <!--
-    <a href="/" >Sair</a>
-     -->
+    <a href="{% url 'funcionario' %}" >Área do Funcionário</a>
+    <a href="{% url 'revisar_carrinho' %}" style="color: rgba(35,241,30,0.83);">Carrinho {{ count_jogos_no_carrinho }}</a>
+
 
   </div>
+
 </div>
 {% block content %}
 

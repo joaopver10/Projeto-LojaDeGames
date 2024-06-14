@@ -1,0 +1,42 @@
+<!-- templates/jogos/revisar_carrinho.html -->
+{% extends 'base.html' %}
+{% load static %}
+{% load bootstrap4 %}
+
+
+{% block title %}
+<title>Revisar Jogo</title>
+{% endblock %}
+
+{% block head %}
+{% bootstrap_css %}
+<link rel="stylesheet" href="{% static 'css/index.css' %}" />
+{% endblock %}
+
+{% block content %}
+ <div id="textoResultado">
+  <h2>Revisar Carrinho</h2>
+ </div>
+  <form method="post" action="{% url 'revisar_carrinho' %}">
+    {% csrf_token %}
+    <ul class="lista-carrinho">
+      {% for jogo in jogos_no_carrinho %}
+        <li class="jogo-no-carrinho">
+          <p>{{ jogo.nome }}</p>
+          <label for="midia_fisica_{{ jogo.id }}">Mídia Física:</label>
+          <input type="checkbox" name="midia_fisica_{{ jogo.id }}" id="midia_fisica_{{ jogo.id }}">
+          <label for="midia_digital_{{ jogo.id }}">Mídia Digital:</label>
+          <input type="checkbox" name="midia_digital_{{ jogo.id }}" id="midia_digital_{{ jogo.id }}">
+        </li>
+      {% endfor %}
+    </ul>
+    <div class="row justify-content-center">
+      <button type="submit" class="btn btn-primary">Finalizar Compra</button>
+    </div>
+  </form>
+  <br>
+  <div class="contLinkVolta">
+    <a href="{% url 'index' %}">Voltar para a busca de jogos</a>
+  </div>
+
+{% endblock %}
