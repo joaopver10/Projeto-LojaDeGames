@@ -93,7 +93,7 @@ DATABASES = {
 """
 
 
-DATABASES["default"] = dj_database_url.parse("postgres://loja_de_games_k78k_user:bquAGLhbXqXa7ARJ9fGrgNgCTIz6Sb9Y@dpg-cpm97uo8fa8c73aetka0-a.oregon-postgres.render.com/loja_de_games_k78k")
+DATABASES["default"] = dj_database_url.parse("postgres://loja_de_games_user:M9WgNQGL4toH51sh6sR20FtfBpDpkfB0@dpg-cpm8taqj1k6c73a4b040-a.oregon-postgres.render.com/loja_de_games")
 
 
 
@@ -134,8 +134,8 @@ USE_TZ = True
 STATIC_URL = 'static/'
 STATIC_ROOT = (BASE_DIR / 'staticfiles')
 
-MEDIA_ROOT = (BASE_DIR / 'media')
-MEDIA_URL = 'media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
