@@ -1,0 +1,181 @@
+
+#textoTitulo{
+    text-align: center;
+    font-size: 1.9em;
+    padding-top: 25px;
+    padding-bottom: 15px;
+}
+
+#textoTituloE{
+    text-align: center;
+    font-size: 1.5em;
+}
+
+#textoResultado{
+    border-top: solid black 1px ;
+    text-align: center;
+    font-size: 1.9em;
+    padding: 10px;
+}
+
+ul{
+    list-style: none;
+    padding: 15px 20px 0 20px
+}
+
+
+ul li a{
+  text-decoration:none;
+  color: black;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 900;
+}
+
+ul li a:hover {
+   cursor: pointer;
+  color: #D64045;
+}
+ul li a:focus {
+  outline: none;
+}
+
+.JogosListaNomes{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    margin: 0 auto;
+    width: 90%;
+
+}
+
+.JogosNomes{
+    display: flex;
+    text-align: center;
+    background-color: #999999;
+    margin: 8px;
+    border-radius: 5px;
+}
+
+
+.JogosNomes a{
+    display: flex;
+    justify-content: center;
+    font-size: 0.8em;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bolder;
+    padding-top: 10px;
+    padding-bottom: 15px;
+}
+
+.contLink{
+    display: flex;
+    margin-top: 210px;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.contLinkVolta{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+
+.contLink a{
+    border-radius: 6px;
+    text-decoration: none;
+    background-color: black;
+    padding: 20px;
+    color: white;
+
+}
+.contLinkVolta a{
+    border-radius: 6px;
+    text-decoration: none;
+    background-color: black;
+    padding: 10px;
+    color: white;
+}
+
+.contLink a:hover{
+    cursor: pointer;
+    background-color: rgba(176, 69, 69, 0.91);
+}
+.contLinkVolta a:hover{
+    cursor: pointer;
+    background-color: rgba(176, 69, 69, 0.91);
+}
+
+.formulario{
+    width: 70%;
+    margin: 0 auto;
+}
+
+.estiloEdita{
+    display: flex;
+    justify-content: center;
+}
+
+.textos{
+    color: black;
+    text-align: center;
+    width: 60%;
+    margin: 0 auto;
+}
+
+.editExc{
+    display: flex;
+    justify-content: center;
+}
+
+.editExc a{
+    text-decoration: none;
+    color: black;
+    padding: 10px 20px 10px 20px;
+    background-color: cornflowerblue;
+    margin: 10px;
+    border-radius: 6px;
+
+}
+
+.editExc a:hover{
+    cursor: pointer;
+    background-color: rgba(189, 12, 12, 0.73);
+}
+
+#desc{
+    text-align: justify;
+
+}
+
+#nota{
+    font-size: 1.4em;
+    color: darkred;
+}
+
+#compras{
+    text-align: center;
+    margin: 70px
+}
+
+#compras ul{
+    list-style: none;
+    margin: 10px;
+}
+
+#compras ul li{
+    padding: 10px;
+}
+
+.lista-carrinho{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.jogo-no-carrinho{
+    padding: 15px;
+    margin: 10px;
+}
+
