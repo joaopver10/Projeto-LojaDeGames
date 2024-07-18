@@ -93,9 +93,13 @@ DATABASES = {
 """
 
 
-DATABASES["default"] = dj_database_url.parse("postgres://loja_de_games_kvmb_user:dSmOnyQ1qN25wZgHSNa0FlF9hKB1aCHO@dpg-cpm9p0uehbks73fm4u4g-a.oregon-postgres.render.com/loja_de_games_kvmb")
-
-
+DATABASES = {
+    'default': dj_database_url.config(
+        default='postgresql://postgres:OlmDmNVkbPtmHgQUZbKsnMkMuOCJUJNf@roundhouse.proxy.rlwy.net:59751/railway',
+        conn_max_age=600,
+        ssl_require=DEBUG
+    )
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
